@@ -1,16 +1,32 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
-
-</RelativeLayout>
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    		android:orientation="vertical"
+    		android:layout_width="fill_parent"
+    		android:layout_height="fill_parent"
+    		>
+   <ListView android:id="@+id/list"
+			android:layout_width="fill_parent"
+			android:layout_height="0dip"
+			android:layout_weight="1"
+			android:transcriptMode="alwaysScroll"
+			android:cacheColorHint="#00000000"
+			android:listSelector="@android:color/transparent"/>
+   <LinearLayout android:id="@+id/footer"
+       		android:layout_height="wrap_content" 
+       		android:layout_width="fill_parent"
+       		android:orientation="horizontal"
+       		android:gravity="bottom"
+       >
+       	<EditText android:inputType="textMultiLine|textNoSuggestions"
+           		android:layout_width="0dp"
+           		android:layout_height="40dp"
+           		android:id="@+id/editText"
+           		android:layout_weight="1"/>
+       	<Button android:layout_width="wrap_content"
+		    	android:layout_height="wrap_content"
+		    	android:id="@+id/send_button"
+		    	android:layout_gravity="center_vertical"
+		    	android:text="send"/>
+   </LinearLayout>
+   
+</LinearLayout>
