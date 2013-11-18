@@ -25,11 +25,14 @@ public class MainActivity extends Activity {
     Channel mChannel;
     BroadcastReceiver mReceiver;
     IntentFilter mIntentFilter;
+    Context mainContext;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+        mainContext = getApplicationContext();
 
 
         /** Create an array adapter to populate dropdownlist */
@@ -47,13 +50,13 @@ public class MainActivity extends Activity {
                 if(actions[itemPosition] == "Setting")
                 {
                     Log.d("main", "setting pressed");
-                    Toast.makeText(getApplicationContext(), "setting pressed", Toast.LENGTH_LONG);
+                    Toast.makeText(mainContext, "setting pressed", Toast.LENGTH_LONG);
                     //Intent myIntent = new Intent(MainActivity.this, SettingActivity.class);
                     //MainActivity.this.startActivity(myIntent);
                 }
                 if(actions[itemPosition] == "Connect")
                 {
-                    Toast.makeText(getApplicationContext(), "connect pressed", Toast.LENGTH_LONG);
+                    Toast.makeText(mainContext, "connect pressed", Toast.LENGTH_LONG);
                     //discoverPeers(mChannel);
                 }
                 return false;
